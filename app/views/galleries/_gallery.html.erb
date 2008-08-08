@@ -1,6 +1,7 @@
-<% content_tag :td, :id => "gallery_#{gallery.id}", :class => ("sub_gallery" unless gallery.parent_id.nil?) do %>
-  <%= link_to image_tag(gallery.public_filename(:thumb), :style => "border:0px;"),
+  <div class="photo">
+  <%= link_to image_tag(gallery.public_filename(:thumb)),
               gallery_url(gallery), :style => 'display:block;' %>
-  <span><%=h "#{gallery.name}" %></span><br />
-  <span><%=h "(#{gallery.pictures.enable_size} pictures)" %></span>
-<% end %>
+  <p><%=h "#{gallery.name}" %></span><br />
+  <%=h "(#{gallery.pictures.enable_size} pictures)" %>
+  </p>
+  </div>

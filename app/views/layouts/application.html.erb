@@ -9,21 +9,21 @@
   <%= yield :head %>
 </head>
 <body>
+  <div id="wrapper">
+    <h1><%= link_to this_webapp.webapp_name, "/" %></h1>
+    <p class="description"><%= this_webapp.webapp_subtitle%></p>
 
-  <div id="title">
-    <h1><%= this_webapp.webapp_name %></h1>
-    <span id="slogan"><%= this_webapp.webapp_subtitle%></span>
-  </div>
-  
-  <div id="breadcrumb">
-    <%= breadcrumbs %>
-  </div>
+      <%= yield %>
+      <div id="footer">
+        <p class="left">
+          Copyright &copy; 2008 Your Name
+        </p>
+        <p class="right">
+          powered by <a href="http://pictrails.rubyforge.org/">Pictrails</a>
+          theme <a href="http://www.mantisatemplates.com/">Mantis-a-template</a>
+        </p>
+      </div>
 
-  <div id="container">
-    
-    <%= yield %>
-    
   </div>
-  <p id="footer">powered by <a href="http://pictrails.rubyforge.org/">Pictrails</a></p>
 </body>
 </html>

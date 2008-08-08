@@ -1,12 +1,11 @@
 <% @page_title = 'List of Gallery'  %>
 
-<table id="gallery_list">
-  <% @galleries.each_slice(3) do |sub_galleries| %>
-    <tr>
+  <div class="gallery">
+  <% @galleries.each_slice(4) do |sub_galleries| %>
       <%= render :partial => sub_galleries %>
-    </tr>
   <% end %>
-</table>
+  </div>
+  <div class="cleaner"></div>
 
 <%= will_paginate @galleries %>
 

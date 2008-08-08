@@ -11,9 +11,8 @@
     There are no picture in this gallery.
   </p>
 <% else %>
-  <table id="picture_list">
+  <div class="gallery">
     <% @sub_content.each_slice(3) do |slice_content|  %>
-      <tr>
         <% slice_content.each do |content| %>
           <% if content.kind_of? Picture %>
             <%= render :partial => 'pictures/picture', :locals => {:picture => content} %>
@@ -21,9 +20,9 @@
             <%= render :partial => 'galleries/gallery', :locals => {:gallery => content} %>
           <% end %>
         <% end %>
-      </tr>
     <% end %>
-  </table>
+  </div>
+  <div class="cleaner"></div>
   <%= will_paginate @sub_content %>
 <% end -%>
 

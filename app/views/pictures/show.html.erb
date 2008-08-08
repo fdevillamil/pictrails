@@ -1,15 +1,11 @@
 <% @page_title = "Picture : #{@picture.title}" %>
 
-<h2>Picture : <%= @picture.title %></h2>
+<h2><%= @picture.title %></h2>
 
-<p>
-  <span><%= image_tag(@picture.public_filename) %></span>
-</p>
+<div class="picture">
+  <%= image_tag(@picture.public_filename) %>
 
-<p>
-  <%= @picture.description %>
-</p>
-
-<p>
-  Tags : <%= tag_link @picture.tag_list %>
-</p>
+  <%= content_tag :p, @picture.description if @picture.description.size > 0 %>
+  <%= content_tag :p, (tag_link @picture.tag_list) if @picture.tag_list.size > 0 %>
+</div>
+<div class="cleaner"></div>
